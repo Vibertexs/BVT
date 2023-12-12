@@ -1,0 +1,70 @@
+
+body {
+  margin: 0px;
+  font-family: montserrat, sans-serif;
+}
+/* for all div class, give a black border */
+div {
+  border: 2px solid gray;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.blue-card {
+  padding: 1rem;
+  background-color: #33b5e5;
+  border: 2px solid white;
+  color: white;
+}
+
+.header {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.body {
+  margin-right: 0px;
+  margin-left: 0px;
+  padding: 0px;
+}
+
+.review-card {
+  padding: 1rem;
+  background-color: hsl(0, 100%, 71%);
+  border: 2px solid white;
+  color: white;
+}
+
+.main-image {
+  background-image: url("https://images.unsplash.com/photo-1606214174585-fe31582dc6ee?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  height: 300px; /* Set the desired height for the container */
+  color: white; /* Optional: Set text color to be visible on the image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-image1 {
+  /* image fills out a square container*/
+  background-image: url("https://images.unsplash.com/photo-1606214174585-fe31582dc6ee?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  height: 300px; /* Set the desired height for the container */
+  color: white; /* Optional: Set text color to be visible on the image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header, .footer {
+    color: white;
+    background-color:rgb(42, 42, 42);
+}
+
+.featured {
+    background-color:rgb(42, 42, 42);
+    color: white;
+}
