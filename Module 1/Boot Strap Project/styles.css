@@ -1,14 +1,15 @@
 
 body {
   box-sizing: border-box;
-
   margin: 0px;
-  font-family: montserrat, sans-serif;
+  background-color: #EAF2EF;
+  font-family: "Roboto", sans-serif;
 }
 /* for all div class, give a black border */
+
+
 div {
   box-sizing: border-box;
-  border: 2px solid gray;
   padding: 1rem;
   margin: 1rem;
 }
@@ -35,9 +36,8 @@ div {
 
 .review-card {
   box-sizing: border-box;
-
+  border-radius: 1em; 
   padding: 1rem;
-  background-color: hsl(0, 100%, 71%);
   border: 2px solid white;
   color: white;
 }
@@ -46,12 +46,17 @@ div {
   background-image: url("https://images.unsplash.com/photo-1606214174585-fe31582dc6ee?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-size: cover;
   background-position: center;
-  height: 300px; /* Set the desired height for the container */
-  color: white; /* Optional: Set text color to be visible on the image */
+  height: 40vh; 
+  color: white; 
   display: flex;
-  align-items: center;
+
+  /* align item to the bottom left */
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 10em, 10em, 10em, 10em;
+  /* align-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: center; */
 }
 
 .card-image1 {
@@ -74,9 +79,110 @@ div {
 .featured {
     background-color:rgb(42, 42, 42);
     color: white;
+
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.featured-card{
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.round-button{
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 1em; 
+  width: 8em;
+  height: 3em;
+  background-color: #1098F7; 
+  color: #ffffff; 
+  text-align: center;
+  font-weight: bold; 
+  border: none;
+  transition: all 0.5s ease;
+}
+
+.round-button:hover {
+  width: 9em;
+  height: 3.5em;
+  background-color: #055E9E; /* Change the background color for hover effect */
+  cursor: pointer;
+}
+
+.round-button:hover {
+  background-color: #055E9E; /* Change the background color for hover effect */
+  cursor: pointer;
 }
 
 
+.main-image-info{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+
+.email-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+}
+
+.email-block{
+  background-color: #ECE9EB;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .option-card{
-  width: 500px;
+  background-color: transparent;
+  padding: 0%;
+  width: 20em; 
+  transition: all 0.5s ease;
+}
+
+.option-card:hover {
+  width: 21em; 
+  filter: brightness(80%); 
+}
+
+.big-text{
+  font-size: 4em;
+}
+
+.title h2{
+  font-size: 3em;
+}
+
+.shopping-cart {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  width: 2em;
+  height: 2em;
+  background-color: #DA2F3A; 
+  border-radius: 50%; 
+height: 4em;
+width: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff; /* White text color */
+  cursor: pointer;
+  z-index: 1;
+}
+
+
+.shopping-cart:hover {
+  background-color: #b3262f; /* Change background color on hover */
 }

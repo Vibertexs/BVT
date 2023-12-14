@@ -20,129 +20,233 @@
     <div class="body container-fluid">
 
       <!-- NAVBAR -->
-      <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-        <div class="container">
-          <a class="navbar-brand fs-4" href="#">PET SHOP</a>
 
-          <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+            <a class="navbar-brand fs-4 p-3" href="#">PET SHOP</a>
+
+            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
 
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <div class="offcanvas offcanvas-end m-0 p-0 " tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" >
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENU</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body m-0">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Products
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Cats</a></li>
+                      <li><a class="dropdown-item" href="#">Dogs</a></li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="#">Search All</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">FAQ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Legal</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        </nav>
+      <!-- END OF NAVBAR -->
 
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Products
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Cats</a></li>
-                    <li><a class="dropdown-item" href="#">Dogs</a></li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Search All</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">About us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">FAQ</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Contact Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Legal</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+
+      <!-- DISPLAY IMAGE -->
+      <div class="main-image m-0 col-12 align-self-start text-center">
+        <div class="main-image-info">
+          <h1>WELCOME TO PET SHOP</h1>
+          <p>Where you can find all your pet needs</p>
+
+          <a href="">
+          <button type="button" class="round-button">Purchase</button>   
+        </a>       
         </div>
-      </nav>
-
-
-      <div class="main-image col-12 align-self-start text-center">
-        IMAGE
       </div>
 
+      <!-- END OF DISPLAY IMAGE -->
       
-      <div class="navigation col-12 align-self-start text-center">
-        NAVIGATION
+
+      <!-- START OF NAVIGATION -->
+      <div class="navigation  align-self-end text-center">
+        <h2>NAVIGATION</h2>
         <div class="row justify-content-center">
 
           <!-- DOG CARD -->
-          <div class="card border-0 option-card">
+          <div class="card border-0 option-card col-xl-3 col-lg-4 col-md-6 col-sm-8">
+            <a href="">
             <img src="dogYellow1.jpg" class="card-img" alt="...">
             <div class="card-img-overlay d-flex align-items-center justify-content-center">
-              <h3 class="card-title text-center text-white">D O G S</h3>
+              <h3 class="card-title text-center text-white big-text">D O G S</h3>
+              
             </div>
+          </a>
+
           </div>
 
           <!-- CAT CARD -->
-          <div class="card border-0 option-card">
+
+          <div class="card border-0 option-card col-xl-3 col-lg-4 col-md-6 col-sm-8">
+            <a href="">
             <img src="catBlue1.jpg" class="card-img" alt="...">
             <div class="card-img-overlay d-flex align-items-center justify-content-center">
-              <h3 class="card-title text-center text-white">C A T S</h3>
+              <h3 class="card-title text-center text-white big-text">C A T S</h3>
             </div>
           </div>
-
-
         </div>
-      </div>
-      <div class="featured col-12 align-self-start text-center">FEATURED
-        <div class="card border-0">
-          <img src="petHairemover.jpg" class="card-img" alt="...">
-          <div class="card-img-overlay d-flex align-items-center justify-content-center">
-            <h3 class="card-title text-center text-white">C A T S</h3>
-          </div>
-        </div>
-
-        <div class="featured-product">
-          <h2>HAIR BRUSH</h2>
-          <p>  LOREM IPSUM DALOR SIT AMET</p>
-          <!-- add a purchase button -->
-          <button type="button">Click Me!</button>
-          <p>  Drop Down</p>
-        </div>
-        <ul class="list-group">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
-          <li class="list-group-item">A fourth item</li>
-        </ul>
-
+      </a>
 
       </div>
-      <div class="col-12 align-self-start text-center">
+
+      <!-- END OF NAVIGATION -->
+
+      <!-- START OF FEATURE SECTION -->
+      <div class="featured m-0">
         
-        REVIEWS
-        <div class="row justify-content-evenly">
-          <div class="review-card col-6">One of six columns</div>
-          <div class="review-card col-6">One of six columns</div>
-          <div class="review-card col-6">One of six columns</div>
-          <div class="review-card col-6">One of six columns</div>
-          <div class="review-card col-6">One of six columns</div>
-          <div class="review-card col-6">One of six columns</div>
+        <div class="title text-center">
+          <h2>FEATURED</h2>
         </div>
+
+        <div class="featured-card">
+
+          <!-- Image -->
+          <div class="card m-0 p-0 border-0 col-xl-3 col-lg-4 col-md-6 col-sm-8">
+            <a href="">
+              <img src="petHairemover.jpg" class="card-img" alt="...">
+            <div class="card-img-overlay d-flex align-items-center justify-content-center">
+            </div>
+          </a>
+          </div>
+
+          <!-- Description -->
+          <div class="product-description col-xl-3 col-lg-4 col-md-6 col-sm-8 p-0">
+            <h3>HAIR REMOVER</h3>
+            <ul>
+              <li>Ergonomic Design</li>
+              <li>Self-Cleaning Technology</li>
+              <li>Easy to Clean</li>
+              <li>Gentle on Fabrics</li>
+              <li>Versatile Usage</li>
+            </ul>
+              <p>Designed for easy grooming
+                 with specially crafted bristles. The ultimate 
+                 solution for a cleaner home.
+              </p>
+
+
+            <!-- add a purchase button -->
+            <a href="">
+            <button type="button" class="round-button">Purchase</button>
+            </a>
+          </div>
+          <!-- <h2>HAIR BRUSH</h2> -->
+          
+        </div>
+
       </div>
 
-      <div class="col-12 align-self-start text-center">
-          <!-- News letter signup -->
+      <!-- END OF FEATURE SECTION -->
+
+
+
+<div class="accordion">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+        <h2>Fast Shipping</h2>
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        We source our products from trusted suppliers
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+        <h2>High Quality</h2>
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        We source our products from trusted suppliers
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        <h2> Satisfaction Guaranteed </h2>
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        We offer a 30 day money back guarantee if you are not satisfied with your purchase!
+      </div>
+    </div>
+  </div>
+
+</div>
+
+      <!-- <div class="col-12 align-self-start text-center m-0">
           <h2>SIGN UP NOW FOR 10% OFF YOUR NEXT ORDER</h2>
           <div class="row justify-content-evenly">
-            <div class="col-6">One of six columns</div>
+            <div class="col-6">
+              
+              One of six columns
+            
+            </div>
           </div>
       
+      </div> -->
+    </div>  
+      <div class="email-block m-0">
+        <div class="email-section p-3 bg-light col-xl-6 col-lg-8 col-md-12 col-sm-12 ">
+          
+          <h2>Get 10% Off!</h2>
+          <p>Sign up for exclusive offers.</p>
+          <form class="d-flex mx-auto">
+            <input type="email" class="form-control" placeholder="Enter email">
+            <button type="submit" class="btn btn-primary ms-2">Sign Up</button>
+          </form>
+        </div>
       </div>
-      <div class="col-12 align-self-start text-center footer">FOOTER</div>
+
+      <!-- <div class="email-section p-3 bg-light col-xl-3 col-lg-4 col-md-6 col-sm-8 ">
+        
+        <h2>Get 10% Off!</h2>
+        <p>Sign up for exclusive offers.</p>
+        <form class="d-flex mx-auto">
+          <input type="email" class="form-control" placeholder="Enter email">
+          <button type="submit" class="btn btn-primary ms-2">Sign Up</button>
+        </form>
+
+      </div> -->
+    
+
+      <div class="footer col-12 align-self-start text-center m-0 p-3">
+        BACK TO TOP
+      </div>
 
 
       <!-- <div class="row justify-content-evenly">
@@ -151,7 +255,6 @@
         <div class="col-6">One of two columns</div>
       </div>
     </div> -->
-
 
 
 
