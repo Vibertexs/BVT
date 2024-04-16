@@ -1,0 +1,6 @@
+Part 1: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing
+
+Learned what the differnece between Asynchronous and synchronus functions are
+
+synchronus functions wait for the function to return before moving on, while
+Asynchronous simply calls it and moves on.

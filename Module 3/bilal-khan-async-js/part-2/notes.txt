@@ -1,0 +1,13 @@
+part 2: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises
+
+Learned how to write basic syntax for promises
+Promises are basically asynch functions, sort of like call backs.
+
+
+sample syntax:
+
+PromiseName.then((message) =>{
+    console.log("Your message if successful: " + message)
+}).catch((message)=>{
+    console.log("Your message if failed: " + message)
+})
