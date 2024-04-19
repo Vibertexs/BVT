@@ -1,3 +1,8 @@
 part 3: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Implementing_a_promise-based_API
 
 More hands on practice of doing it. I included my own little promise and callign it
+
+PROMISE TERMINOLOGY
+1. pending: the request is still being made
+2. fulfilled the function has succeeded
+3. rejected the function has failed

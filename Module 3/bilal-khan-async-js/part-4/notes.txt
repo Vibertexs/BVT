@@ -1,0 +1,6 @@
+part 4: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing_workers
+
+Workers give you the ability to compute stuff on a different thread
+however the only limitation is that they cant modify the DOM
+
+we send a message to the worker using worker.postMessage(). This message can take an argument

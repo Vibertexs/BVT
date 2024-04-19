@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather API</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <div id="display">
+        <div id="output">
+        <h1>WEATHERS API</h1>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" value="Sacramento" />
+        <button id="getWeather">Get Weather</button>
+        <button id="reload">Reload</button> 
+      </div>
+
+      <div id="data-result">
+        <h2>Weather Data</h2>
+        <div id="weather-data"></div>
+      </div>
+    </div>
+
+    <!-- 
+        api key
+
+        api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+
+        https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=2c1ebcf54d4adab1348f58935d6ee373
+     -->
+
+    <script src="script.js"></script>
+  </body>
+</html>

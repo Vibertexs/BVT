@@ -19,3 +19,5 @@ Promise.all([fetchPromise1, fetchPromise2, fetchPromise3])
   });
 
 // you can alos use Promise.race() to get the first settled promise
+// Or promise.any() to get the first fulfilled promise
+// Or promise.allSettled() to get all settled promises
