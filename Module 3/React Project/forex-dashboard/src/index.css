@@ -1,0 +1,211 @@
+/* NAVBAR */
+.navbar {
+  letter-spacing: 0.15rem; /* Adjust letter spacing as needed */
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0D0A0B;
+  color: white;
+  padding: 0.825rem 1.50rem;
+  font-size: 1.75rem;
+}
+
+.username {
+  flex-grow: 1;
+  text-align: center;
+}
+.account-number {
+  font-weight: bold;
+}
+
+
+/* ACCOUNT INFO */
+
+.info-card {
+  flex: 1;
+  width: calc(20% - 1rem); /* Adjust the percentage and margin as needed */
+  height: 4rem;
+  background-color: rgba(226, 226, 226, 0.01);
+
+  color: white;
+  padding: 1.5rem 0.5rem;
+  border-radius: 1rem;
+  margin: 0.5rem 0.8rem;
+}
+
+
+.info-card h3 {
+  color: rgba(255, 255, 255, 0.724);
+  font-weight: 100;
+  font-size: 1.3rem;
+  position: relative;
+  bottom: -3.5rem; /* Adjust as needed */
+  left: 1rem; /* Adjust as needed */
+  margin: 0; /* Remove default margin */
+}
+
+.info-card p {
+  position: relative;
+  /* position it to be in the center */
+  text-align: center;
+
+  font-size: 2.5rem;
+  font-weight: 700;
+  bottom: 2rem; /* Adjust as needed */
+  margin: 0; /* Remove default margin */
+}
+
+#accountInfo {
+  display: flex;
+  justify-content: space-around; /* Adjust this property to change the spacing between cards */
+  flex-wrap: nowrap; /* Ensure cards do not wrap to the next line */
+}
+
+
+/* ACCOUNT GROWTH */
+
+/* Graph display */
+#accountGrowth {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.graphDisplay{
+  width: calc(55% - 1.5rem); /* Subtracting 8rem (4rem margin on each side) from 60% */
+  background-color: rgba(226, 226, 226, 0.01);
+  /* border: 2px solid white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 4rem;
+}
+
+#graphSpacing {
+  width: 90%; /* Adjust width of the graph as needed */
+  height: 100%; /* Adjust height as needed */
+  padding: 2rem;
+}
+
+/* Stats display */
+.statsDisplay {
+  width: calc(35% - 1.5rem); /* Subtracting 8rem (4rem margin on each side) from 40% */
+  background-color: rgba(255, 255, 255, 0.01); /* Adjust the background color to fit your theme */
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.statsHeader h2 {
+  text-align: center; /* Center the title for emphasis */
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.statsTable {
+  display: flex;
+  flex-direction: column; /* Aligns the stat items vertically */
+}
+
+.statItem {
+  display: flex;
+  justify-content: space-between; /* Ensures labels and values are on opposite ends */
+  align-items: center; /* Centers items vertically in case of different content heights */
+  padding: 8px 20px; /* Adds padding inside each stat item */
+  border-bottom: 1px solid #ccc; /* Adds a horizontal line below each item */
+}
+
+.statItem:last-child {
+  border-bottom: none; /* Removes the border from the last item to avoid an extra line */
+}
+
+.statsLabel, .statsValue {
+  flex-basis: 50%; /* Assigns equal width to both label and value */
+  padding: 1rem; /* Adds padding for spacing */
+  box-sizing: border-box; /* Ensures padding is included in the width calculation */
+}
+
+.statsLabel {
+  color: rgba(255, 255, 255, 0.724);
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: left; /* Aligns the text to the left */
+  margin-right: 10px; /* Adds some space between label and value */
+}
+
+.statsValue {
+  font-size: 1.3rem;
+  text-align: right; /* Aligns the text to the right */
+}
+
+/* Trading History */
+
+.previousTrades{
+  display: flex;
+  /* algin the cards in the center */
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.trade-card{
+  /*align all the text horizontally. The first will be on the left, the second in the center, and the last on the right*/
+  display: flex;
+  justify-content: space-between;
+  width: calc(90% - 1rem); /* Subtracting 4rem (2rem margin on each side) from 30% */
+  margin: 0.5rem 0rem;
+  padding: 0.5rem 2.5rem;
+  border-radius: 0.5rem;
+  
+}
+
+.trade-card p{
+  font-size: 1.5rem;
+  font-weight: 50;
+}
+
+.allTradesLink{
+  display: flex;
+  justify-content: right;
+  text-align: right;
+  font-size: 1.0rem;
+  color: rgb(188, 188, 188);
+  text-decoration: underline;
+  margin: 1rem 6rem;
+}
+
+
+/* BODY */
+/* change background color to black */
+body {
+  padding: 0rem 0rem;
+  margin: 0;
+  background-image: linear-gradient(#16121E, #000000);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+.pageSectionTitle {
+  letter-spacing: 0.3rem; /* Adjust letter spacing as needed */
+  word-spacing: 0.8rem;
+  font-size: 2.3rem;
+  font-weight: 1200;
+  margin: 2.5rem 0.625rem;
+}
+
+.addBorder{
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgb(95, 95, 95), 0 0 0 0.1rem white; /* Add white outline */
+
+}
+
+#mainContent {
+
+  padding: 0rem 4rem;
+}

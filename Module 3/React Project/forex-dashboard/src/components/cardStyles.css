@@ -1,0 +1,8 @@
+.green-background {
+    background-image: linear-gradient(to right, rgba(255,0,0,0), #06D6A0);
+
+  }
+  
+  .red-background {
+    background-image: linear-gradient(to right, rgba(255,0,0,0), #FB3640);
+  }

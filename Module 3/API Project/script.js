@@ -28,7 +28,6 @@ function renderWeather(weather){
 
 function fetchWeather(city){
     var url = "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=2c1ebcf54d4adab1348f58935d6ee373";
-
     fetch(url)
     .then(response => response.json())
     .then(data => {
