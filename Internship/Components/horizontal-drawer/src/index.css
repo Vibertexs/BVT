@@ -1,0 +1,23 @@
+/*
+body, html, #root {
+  background-color: black;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Wrap cards to the next line if they don't fit in one row */
+/*
+}
+
+*/
+/* 
+body{
+  background-color: black;
+} */

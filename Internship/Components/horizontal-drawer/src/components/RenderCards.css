@@ -1,0 +1,49 @@
+.cards-container { /*This holds all the cards*/
+    position: relative;
+    width: 100%;
+    height: 98vh; /* Ensure it takes full height */
+    overflow: auto; 
+  }
+  
+  .card-render {
+    display: flex;
+    transition: transform 0.1s ease;
+    position: relative;
+    height: 100%; /* Ensure it takes full height */
+  }
+  
+  .vertical-card {
+    display: block;
+    overflow: hidden;
+    width: calc(100% / var(--number-of-cards) - 0.5em);
+    height: 99%;
+    transition: transform 0.7s ease, filter 0.3s ease; /* Ensure filter transition is included */
+    border: 0.3em solid rgb(0, 0, 0);
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    box-sizing: border-box; /* Include border in the element's total width and height */
+    filter: saturate(15%); /* Default saturation */
+  }
+  
+  .vertical-card:hover .vertical-card-image {
+    transform: scale(1.05);
+  }
+  
+  .vertical-card-image {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease, filter 0.3s ease;
+    object-fit: cover;
+    box-sizing: border-box; /* Include border in the element's total width and height */
+  }
+  
+  .detail-container {
+    height: 99%;
+    position: absolute;
+    top: 0;
+    background-color: aqua;
+    overflow-y: auto; /* Make the container scrollable */
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+  }
+  
