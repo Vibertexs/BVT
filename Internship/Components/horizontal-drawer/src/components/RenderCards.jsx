@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './RenderCards.css';
 
-const VerticalCard = ({ image, onClick, translateX, zIndex, saturation, onMouseEnter, onMouseLeave }) => {
+const VerticalCard = ({ image, onClick, translateX, zIndex, saturation, onMouseEnter, onMouseLeave, text }) => {
   const cardStyle = {
     transform: `translateX(${translateX})`,
     zIndex,
     filter: `saturate(${saturation}%)`,
+    position: 'relative',
   };
 
   return (
@@ -17,11 +18,12 @@ const VerticalCard = ({ image, onClick, translateX, zIndex, saturation, onMouseE
       onMouseLeave={onMouseLeave}
     >
       <img src={image} alt="Vertical Card" className="vertical-card-image" />
+      {text && <div className="vertical-card-text">{text}</div>}
     </div>
   );
 };
 
-const RenderCards = ({ numberOfCards, imagesArray, linksArray, ChildComponents }) => {
+const RenderCards = ({ numberOfCards, imagesArray, linksArray, ChildComponents, texts }) => {
   const [selectedCard, setSelectedCard] = useState(-1);
   const [hoveredCard, setHoveredCard] = useState(-1);
   const [cardZIndex, setCardZIndex] = useState([]);
@@ -93,6 +95,7 @@ const RenderCards = ({ numberOfCards, imagesArray, linksArray, ChildComponents }
               saturation={saturation}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
+              text={texts[index]} // Pass the corresponding text for each card
             />
           );
         })}

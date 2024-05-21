@@ -15,12 +15,20 @@ const images = [
 
 
 
-const links = [
-  "",
-  "",
-  "",
-  "",
-  ""
+// const links = [
+//   "",
+//   "",
+//   "",
+//   "",
+//   ""
+// ];
+
+const texts = [
+  "Text for Image 1",
+  "Text for Image 2",
+  "Text for Image 3",
+  "Text for Image 4",
+  "Text for Image 5"
 ];
 
 // make an array of child components
@@ -35,7 +43,9 @@ const ChildComponents = Array.from({ length: images.length }, (_, index) => {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RenderCards numberOfCards={images.length} imagesArray={images} linksArray={links} ChildComponents={ChildComponents} />
+    <RenderCards numberOfCards={images.length} imagesArray={images} ChildComponents={ChildComponents} texts={texts} />
+
+    {/* <RenderCards numberOfCards={images.length} imagesArray={images} linksArray={links} ChildComponents={ChildComponents} /> */}
     {/* <RenderCards numberOfCards={images.length} imagesArray={images} linksArray={links} ChildComponent={ChildComponent} />
     <RenderCards numberOfCards={images.length} imagesArray={images} linksArray={links} ChildComponent={ChildComponent} />
     <RenderCards numberOfCards={images.length} imagesArray={images} linksArray={links} ChildComponent={ChildComponent} /> */}
