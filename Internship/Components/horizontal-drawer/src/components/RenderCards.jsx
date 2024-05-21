@@ -21,7 +21,7 @@ const VerticalCard = ({ image, onClick, translateX, zIndex, saturation, onMouseE
   );
 };
 
-const RenderCards = ({ numberOfCards, imagesArray, linksArray, ChildComponent }) => {
+const RenderCards = ({ numberOfCards, imagesArray, linksArray, ChildComponents }) => {
   const [selectedCard, setSelectedCard] = useState(-1);
   const [hoveredCard, setHoveredCard] = useState(-1);
   const [cardZIndex, setCardZIndex] = useState([]);
@@ -97,9 +97,9 @@ const RenderCards = ({ numberOfCards, imagesArray, linksArray, ChildComponent })
           );
         })}
       </div>
-      {selectedCard !== -1 && ChildComponent && (
+      {selectedCard !== -1 && ChildComponents[selectedCard] && (
         <div className="detail-container" style={detailStyle}>
-          <ChildComponent name={`Card ${selectedCard + 1}`} />
+          {ChildComponents[selectedCard]}
         </div>
       )}
     </div>
