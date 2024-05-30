@@ -7,42 +7,7 @@ const ChildComponent = ({name}) => {
     <br />
     <h1>Name: {name}</h1>
     <br />
-    <h1>Name: {name}</h1>
-    <br />
-    <h1>Name: {name}</h1>
-    <br />
-    <h1>Name: {name}</h1>
-    <br />
-    <h1>Name: {name}</h1>
-    <br />
-    <h1>Name: {name}</h1>
-    <br />
-    <h1>Name: {name}</h1>
-    <br />
-    <h1>Name: {name}</h1>
-    <br />
-    <h1>Name: {name}</h1>
-    <br />
-    <h1>Name: {name}</h1>
-    <br />
-    <h1>Name: {name}</h1>
-    <br />
-    <h1>Name: {name}</h1>
-    <br />
-    <h1>Name: {name}</h1>
-    <br />
-    <h1>Name: {name}</h1>
-    <br />
-    <h1>Name: {name}</h1>
-    <br />
-    <h1>Name: {name}</h1>
-    <br />
-    <h1>Name: {name}</h1>
-    <br />
-    <h1>Name: {name}</h1>
-    <br />
-    <h1>Name: {name}</h1>
-    <br />
+
   </div>
 )};
 
