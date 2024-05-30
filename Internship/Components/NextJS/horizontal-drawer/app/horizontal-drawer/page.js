@@ -34,6 +34,18 @@ const MainPage = () => {
         ChildComponents={ChildComponents}
         texts={texts}
       />
+      <RenderCards
+        numberOfCards={images.length}
+        imagesArray={images}
+        ChildComponents={ChildComponents}
+        texts={texts}
+      />
+      <RenderCards
+        numberOfCards={images.length}
+        imagesArray={images}
+        ChildComponents={ChildComponents}
+        texts={texts}
+      />
     </div>
   );
 };
