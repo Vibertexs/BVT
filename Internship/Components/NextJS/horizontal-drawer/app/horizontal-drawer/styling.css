@@ -1,0 +1,14 @@
+body, html, #root {
+    background-color: black;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cardContainer{
+    background-color: rgb(206, 33, 241);
+    padding: 3%;
+    /* margin-top: 10em; */
+    /* overflow-y:scroll; */
+  }

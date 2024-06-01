@@ -1,5 +1,3 @@
-'use client';
-
 import React, { useState, useEffect } from 'react';
 import './RenderCards.css';
 
@@ -25,7 +23,8 @@ const VerticalCard = ({ image, onClick, translateX, zIndex, saturation, onMouseE
   );
 };
 
-const RenderCards = ({ numberOfCards, imagesArray, linksArray, ChildComponents, texts }) => {
+const RenderCards = ({ data }) => {
+  const numberOfCards = data.sectionOne.length;
   const [selectedCard, setSelectedCard] = useState(-1);
   const [hoveredCard, setHoveredCard] = useState(-1);
   const [cardZIndex, setCardZIndex] = useState([]);
@@ -74,7 +73,7 @@ const RenderCards = ({ numberOfCards, imagesArray, linksArray, ChildComponents, 
   return (
     <div className="cards-container">
       <div className="card-render" style={cardRenderStyle}>
-        {Array.from({ length: numberOfCards }).map((_, index) => {
+        {data.sectionOne.map((section, index) => {
           const isSelected = selectedCard !== -1;
           const translateX = isSelected ? `-${index * 100}%` : '0';
           let saturation = 15; // Default saturation for non-selected, non-hovered cards
@@ -90,21 +89,21 @@ const RenderCards = ({ numberOfCards, imagesArray, linksArray, ChildComponents, 
           return (
             <VerticalCard
               key={index}
-              image={imagesArray[index]}
+              image={section.imageURL}
               onClick={() => handleCardClick(index)}
               translateX={translateX}
               zIndex={cardZIndex[index]}
               saturation={saturation}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
-              text={texts[index]} // Pass the corresponding text for each card
+              text={section.imageText} // Pass the corresponding text for each card
             />
           );
         })}
       </div>
-      {selectedCard !== -1 && ChildComponents[selectedCard] && (
+      {selectedCard !== -1 && data.sectionOne[selectedCard].childPageContent && (
         <div className="detail-container" style={detailStyle}>
-          {ChildComponents[selectedCard]}
+          {data.sectionOne[selectedCard].childPageContent}
         </div>
       )}
     </div>
