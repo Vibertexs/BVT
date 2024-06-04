@@ -39,11 +39,22 @@ const RenderCards = ({ data }) => {
       if (prevSelectedCard === index) {
         return -1; // Deselect the card
       } else {
-        const newZIndex = Array.from({ length: numberOfCards }, (_, i) => i);
-        newZIndex[index] = numberOfCards;
-        setCardZIndex(newZIndex);
-        return index;
-      }
+        // const newZIndex = Array.from({ length: numberOfCards }, (_, i) => i);
+        // newZIndex[index] = numberOfCards;
+        // setCardZIndex(newZIndex);
+        // return index;
+
+      const newZIndex = [];
+        for (let i = 0; i < numberOfCards; i++) {
+          newZIndex.push(i);
+        }
+
+      newZIndex[index] = numberOfCards;
+      setCardZIndex(newZIndex);
+      return index;
+      
+    }
+
     });
     console.log('Card clicked:', index);
   };
@@ -66,8 +77,7 @@ const RenderCards = ({ data }) => {
   };
 
   const detailStyle = {
-    marginLeft: `calc(${100 / numberOfCards}% + 0.5em)`,
-    width: `calc(${100 - 100 / numberOfCards}% - 0.5em)`,
+    width: `calc(${100 - 100 / numberOfCards}% - 0.0em)`, // change the second param to change the padding
   };
 
   return (
