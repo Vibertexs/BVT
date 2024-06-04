@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './RenderCards.css';
 
+
+// This is each card
 const VerticalCard = ({ image, onClick, translateX, zIndex, saturation, onMouseEnter, onMouseLeave, text }) => {
   const cardStyle = {
     transform: `translateX(${translateX})`,
@@ -27,57 +29,45 @@ const RenderCards = ({ data }) => {
   const numberOfCards = data.sectionOne.length;
   const [selectedCard, setSelectedCard] = useState(-1);
   const [hoveredCard, setHoveredCard] = useState(-1);
-  const [cardZIndex, setCardZIndex] = useState([]);
 
+  // Placeholder state for the currently displayed card
+  const [displayedCard, setDisplayedCard] = useState(-1);
+
+  // This is used to wait until another card is selected to change the child component  
   useEffect(() => {
-    const initialZIndex = Array.from({ length: numberOfCards }, (_, index) => index);
-    setCardZIndex(initialZIndex);
-  }, [numberOfCards]);
+    if (selectedCard !== -1 && selectedCard !== displayedCard) {
+      setDisplayedCard(selectedCard);
+    }
+  }, [selectedCard, displayedCard]);
 
+  // If selecting a card, selectedCard = the selected card, otherwise it will be -1
   const handleCardClick = (index) => {
     setSelectedCard((prevSelectedCard) => {
       if (prevSelectedCard === index) {
         return -1; // Deselect the card
       } else {
-        // const newZIndex = Array.from({ length: numberOfCards }, (_, i) => i);
-        // newZIndex[index] = numberOfCards;
-        // setCardZIndex(newZIndex);
-        // return index;
-
-      const newZIndex = [];
-        for (let i = 0; i < numberOfCards; i++) {
-          newZIndex.push(i);
-        }
-
-      newZIndex[index] = numberOfCards;
-      setCardZIndex(newZIndex);
-      return index;
-      
-    }
-
+        return index;
+      }
     });
-    console.log('Card clicked:', index);
   };
 
+  // When mouse hovers over a card, start the hover effect for that card
   const handleMouseEnter = (index) => {
     setHoveredCard(index);
   };
-
+  // Once it leaves it sets the hoveredCard to -1. indicating the mouse is not over any cards
   const handleMouseLeave = () => {
     setHoveredCard(-1);
   };
 
-  useEffect(() => {
-    console.log('Selected card:', selectedCard);
-    console.log('Card Z-Index:', cardZIndex);
-  }, [selectedCard, cardZIndex]);
-
+  // css variable thats being passed in
   const cardRenderStyle = {
     '--number-of-cards': numberOfCards,
   };
 
+  // Style responsible for calculating how much space it has to render the child component
   const detailStyle = {
-    width: `calc(${100 - 100 / numberOfCards}% - 0.0em)`, // change the second param to change the padding
+    width: `calc(${100 - 100 / numberOfCards}% - 0.5em)`, // change the second param to change the padding
   };
 
   return (
@@ -85,16 +75,10 @@ const RenderCards = ({ data }) => {
       <div className="card-render" style={cardRenderStyle}>
         {data.sectionOne.map((section, index) => {
           const isSelected = selectedCard !== -1;
+          const isHovered = hoveredCard === index;
+          const zIndex = isSelected ? (index === selectedCard ? numberOfCards : index) : (isHovered ? numberOfCards + 1 : index);
           const translateX = isSelected ? `-${index * 100}%` : '0';
-          let saturation = 15; // Default saturation for non-selected, non-hovered cards
-          
-          if (hoveredCard === index) {
-            saturation = 100; // Full saturation when hovered
-          } else if (selectedCard === index) {
-            saturation = 100; // Full saturation for the selected card
-          } else if (isSelected) {
-            saturation = 20; // Lower saturation for other non-selected cards when one is selected
-          }
+          const saturation = isSelected ? 100 : (isHovered ? 100 : 15);
 
           return (
             <VerticalCard
@@ -102,7 +86,7 @@ const RenderCards = ({ data }) => {
               image={section.imageURL}
               onClick={() => handleCardClick(index)}
               translateX={translateX}
-              zIndex={cardZIndex[index]}
+              zIndex={zIndex}
               saturation={saturation}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
@@ -111,9 +95,11 @@ const RenderCards = ({ data }) => {
           );
         })}
       </div>
-      {selectedCard !== -1 && data.sectionOne[selectedCard].childPageContent && (
+
+      {/* If a child card is allowed to be displayed and the child component exists, render it  */}
+      {displayedCard !== -1 && data.sectionOne[displayedCard].childPageContent && (
         <div className="detail-container" style={detailStyle}>
-          {data.sectionOne[selectedCard].childPageContent}
+          {data.sectionOne[displayedCard].childPageContent}
         </div>
       )}
     </div>

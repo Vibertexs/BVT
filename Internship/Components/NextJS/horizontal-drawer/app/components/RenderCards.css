@@ -10,35 +10,51 @@
   margin: 0;
   position: relative; /* Add this */
 }
-  
+
+/* Child component styling */
+.detail-container {
+  /* justify-content: center; */
+  /* align-items: center; */
+  margin-top: 1vh;
+  height: 98vh; /* Change height to 100% */
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: aqua;
+  overflow-y: auto;
+  box-sizing: border-box;
+  /* width: calc(100% - 0.5em); */ /*replaced by code in jsx file*/
+}
+
   .card-render {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center; 
+    align-items: center; 
     transition: transform 0.1s ease;
     position: relative;
-    height: 100%; /* Ensure it takes full height */
-    align-items: center; /* Center cards vertically within this div */
-    padding: 0; /* Remove any padding */
-    margin: 0; /* Remove any margin */
+    height: 100%; 
+    padding: 0; 
+    margin: 0; 
   }
   
   .vertical-card {
+    
     display: block;
     overflow: hidden;
     width: calc(100% / var(--number-of-cards)); /* Ensure no extra spacing */
-    height: 98%;
-    transition: transform 0.7s ease, filter 0.3s ease; /* Ensure filter transition is included */
-    border: 0.3em solid rgb(0, 0, 0);
+    height: 98vh;
+    transition: transform 0.7s ease, filter 0.3s ease; /* filter transition */
+    /* border: 0.3em solid rgb(0, 0, 0); */
     cursor: pointer;
     position: relative;
     flex-shrink: 0;
     box-sizing: border-box; /* Include border in the element's total width and height */
+    box-shadow: 0 0 1em rgba(0, 0, 0, 1); 
     filter: saturate(15%); /* Default saturation */
   }
   
   .vertical-card:hover .vertical-card-image {
-    transform: scale(1.10);
+    transform: scale(1.15);
   }
   
   .vertical-card-image {
@@ -47,19 +63,10 @@
     transition: transform 0.5s ease, filter 0.3s ease;
     object-fit: cover;
     box-sizing: border-box; /* Include border in the element's total width and height */
+    transform: scale(1.05);  /* Default scale*/
   }
   
-  .detail-container {
-    margin-top: 1vh;
-    height: 98%; /* Change height to 100% */
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: aqua;
-    overflow-y: auto;
-    box-sizing: border-box;
-    width: calc(100% - 0.5em);
-  }
+
   
   .vertical-card-text {
     position: absolute;
