@@ -4,19 +4,42 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
   overflow: hidden;
   box-sizing: border-box;
   margin: 0;
   position: relative; /* Add this */
+  /* height: 80vh; */
+}
+
+/* Changes the image inside the card */
+.vertical-card {
+  
+  /*Directly related to the height in cards container*/
+  /* Responsible for zooming in image properly */
+  /* height: 80vh;  */
+  height: var(--height);
+  display: block;
+  overflow: hidden;
+  width: calc(100% / var(--number-of-cards)); /* Ensure no extra spacing */
+  transition: transform 0.7s ease, filter 0.3s ease; /* filter transition */
+  /* border: 0.3em solid rgb(0, 0, 0); */
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  box-sizing: border-box; /* Include border in the element's total width and height */
+  box-shadow: 0 0 1em rgba(0, 0, 0, 1); 
+  filter: saturate(15%); /* Default saturation */
 }
 
 /* Child component styling */
 .detail-container {
   /* justify-content: center; */
   /* align-items: center; */
-  margin-top: 1vh;
-  height: 98vh; /* Change height to 100% */
+  /* margin-top: 1vh; */
+  /* height: 40vh;  */  /* Directly related to the height in cards container% */ /*Not as importnat, overridden somewhere*/
+  /* margin-top: 0.8%; */
+  height: var(--childHeight);
+  /* height: 80vh; */
   position: absolute;
   top: 0;
   right: 0;
@@ -26,10 +49,12 @@
   /* width: calc(100% - 0.5em); */ /*replaced by code in jsx file*/
 }
 
-  .card-render {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
+
+
+.card-render {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
     transition: transform 0.1s ease;
     position: relative;
     height: 100%; 
@@ -37,21 +62,6 @@
     margin: 0; 
   }
   
-  .vertical-card {
-    
-    display: block;
-    overflow: hidden;
-    width: calc(100% / var(--number-of-cards)); /* Ensure no extra spacing */
-    height: 98vh;
-    transition: transform 0.7s ease, filter 0.3s ease; /* filter transition */
-    /* border: 0.3em solid rgb(0, 0, 0); */
-    cursor: pointer;
-    position: relative;
-    flex-shrink: 0;
-    box-sizing: border-box; /* Include border in the element's total width and height */
-    box-shadow: 0 0 1em rgba(0, 0, 0, 1); 
-    filter: saturate(15%); /* Default saturation */
-  }
   
   .vertical-card:hover .vertical-card-image {
     transform: scale(1.15);

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './RenderCards.css';
 
-
-// This is each card
 const VerticalCard = ({ image, onClick, translateX, zIndex, saturation, onMouseEnter, onMouseLeave, text }) => {
   const cardStyle = {
     transform: `translateX(${translateX})`,
@@ -26,54 +24,50 @@ const VerticalCard = ({ image, onClick, translateX, zIndex, saturation, onMouseE
 };
 
 const RenderCards = ({ data }) => {
-  const numberOfCards = data.sectionOne.length;
+  const numberOfCards = data.cards.length;
   const [selectedCard, setSelectedCard] = useState(-1);
   const [hoveredCard, setHoveredCard] = useState(-1);
 
-  // Placeholder state for the currently displayed card
   const [displayedCard, setDisplayedCard] = useState(-1);
 
-  // This is used to wait until another card is selected to change the child component  
   useEffect(() => {
     if (selectedCard !== -1 && selectedCard !== displayedCard) {
       setDisplayedCard(selectedCard);
     }
   }, [selectedCard, displayedCard]);
 
-  // If selecting a card, selectedCard = the selected card, otherwise it will be -1
   const handleCardClick = (index) => {
     setSelectedCard((prevSelectedCard) => {
       if (prevSelectedCard === index) {
-        return -1; // Deselect the card
+        return -1;
       } else {
         return index;
       }
     });
   };
 
-  // When mouse hovers over a card, start the hover effect for that card
   const handleMouseEnter = (index) => {
     setHoveredCard(index);
   };
-  // Once it leaves it sets the hoveredCard to -1. indicating the mouse is not over any cards
+
   const handleMouseLeave = () => {
     setHoveredCard(-1);
   };
 
-  // css variable thats being passed in
   const cardRenderStyle = {
     '--number-of-cards': numberOfCards,
-  };
-
-  // Style responsible for calculating how much space it has to render the child component
+    '--height': data.styling.height,
+    };
+    
   const detailStyle = {
-    width: `calc(${100 - 100 / numberOfCards}% - 0.5em)`, // change the second param to change the padding
+    '--childHeight': data.styling.height,
+    width: `calc(${100 - 100 / numberOfCards}% - 0.5em)`,
   };
 
   return (
     <div className="cards-container">
       <div className="card-render" style={cardRenderStyle}>
-        {data.sectionOne.map((section, index) => {
+        {data.cards.map((section, index) => {
           const isSelected = selectedCard !== -1;
           const isHovered = hoveredCard === index;
           const zIndex = isSelected ? (index === selectedCard ? numberOfCards : index) : (isHovered ? numberOfCards + 1 : index);
@@ -90,16 +84,15 @@ const RenderCards = ({ data }) => {
               saturation={saturation}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
-              text={section.imageText} // Pass the corresponding text for each card
+              text={section.imageText}
             />
           );
         })}
       </div>
 
-      {/* If a child card is allowed to be displayed and the child component exists, render it  */}
-      {displayedCard !== -1 && data.sectionOne[displayedCard].childPageContent && (
+      {displayedCard !== -1 && data.cards[displayedCard].childPageContent && (
         <div className="detail-container" style={detailStyle}>
-          {data.sectionOne[displayedCard].childPageContent}
+          {data.cards[displayedCard].childPageContent}
         </div>
       )}
     </div>

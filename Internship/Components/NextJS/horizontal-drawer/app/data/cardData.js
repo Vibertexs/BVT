@@ -42,8 +42,16 @@ import Page3 from '../components/Dummy';
 //         }
 //     ]
 // };
+
+// Changes to height  through json
+// Width will always be 100%
 const data = {
-    "sectionOne": [
+    
+    "styling": {
+        "height": "90vh",
+    },
+
+    "cards": [
         {
             "imageURL": "https://images.unsplash.com/photo-1571822325911-c01620a65e86?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "imageText": "",
@@ -80,9 +88,10 @@ const data = {
             "childPageContent": <Page2 name="Machu Picchu" />
         }
     ]
+
 };
 
 
-""
+
 
 export default data;
