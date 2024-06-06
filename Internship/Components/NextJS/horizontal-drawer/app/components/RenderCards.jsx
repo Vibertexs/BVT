@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './RenderCards.css';
 
-const VerticalCard = ({ image, onClick, translateX, zIndex, saturation, onMouseEnter, onMouseLeave, text }) => {
+const VerticalCard = ({ image, onClick, translateX, zIndex, saturation, onMouseEnter, onMouseLeave, text, animating }) => {
   const cardStyle = {
     transform: `translateX(${translateX})`,
     zIndex,
     filter: `saturate(${saturation}%)`,
     position: 'relative',
+    pointerEvents: animating ? 'none' : 'auto', // Disable pointer events if animating
   };
 
   return (
@@ -27,6 +28,7 @@ const RenderCards = ({ data }) => {
   const numberOfCards = data.cards.length;
   const [selectedCard, setSelectedCard] = useState(-1);
   const [hoveredCard, setHoveredCard] = useState(-1);
+  const [animating, setAnimating] = useState(false); // Track if cards are animating
 
   const [displayedCard, setDisplayedCard] = useState(-1);
 
@@ -39,25 +41,33 @@ const RenderCards = ({ data }) => {
   const handleCardClick = (index) => {
     setSelectedCard((prevSelectedCard) => {
       if (prevSelectedCard === index) {
+        setAnimating(true); // Start animating when deselecting a card
+        setTimeout(() => setAnimating(false), 500); // Set animation duration
         return -1;
       } else {
+        setAnimating(true); // Start animating when selecting a card
+        setTimeout(() => setAnimating(false), 500); // Set animation duration
         return index;
       }
     });
   };
 
   const handleMouseEnter = (index) => {
-    setHoveredCard(index);
+    if (!animating) {
+      setHoveredCard(index);
+    }
   };
 
   const handleMouseLeave = () => {
-    setHoveredCard(-1);
+    if (!animating) {
+      setHoveredCard(-1);
+    }
   };
 
   const cardRenderStyle = {
     '--number-of-cards': numberOfCards,
     '--height': data.styling.height,
-    };
+  };
     
   const detailStyle = {
     '--childHeight': data.styling.height,
@@ -85,6 +95,7 @@ const RenderCards = ({ data }) => {
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
               text={section.imageText}
+              animating={animating}
             />
           );
         })}

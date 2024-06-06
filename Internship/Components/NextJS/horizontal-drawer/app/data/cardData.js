@@ -48,7 +48,7 @@ import Page3 from '../components/Dummy';
 const data = {
     
     "styling": {
-        "height": "90vh",
+        "height": "85vh",
     },
 
     "cards": [

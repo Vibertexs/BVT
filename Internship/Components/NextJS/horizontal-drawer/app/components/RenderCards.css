@@ -33,20 +33,13 @@
 
 /* Child component styling */
 .detail-container {
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* margin-top: 1vh; */
-  /* height: 40vh;  */  /* Directly related to the height in cards container% */ /*Not as importnat, overridden somewhere*/
-  /* margin-top: 0.8%; */
   height: var(--childHeight);
-  /* height: 80vh; */
   position: absolute;
   top: 0;
   right: 0;
   background-color: aqua;
   overflow-y: auto;
   box-sizing: border-box;
-  /* width: calc(100% - 0.5em); */ /*replaced by code in jsx file*/
 }
 
 
