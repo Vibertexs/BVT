@@ -1,5 +1,6 @@
 body, html, #root {
-    background-color: black;
+  background-color: #000000;
+
     margin: 0;
     /* padding:100px; */
     display: flex;
@@ -9,10 +10,10 @@ body, html, #root {
 
 
   h1{
-    color:white;
+    color:#ffffff;
   }
   .cardContainer{
-    background-color: rgb(0, 0, 0);
+    background-color: #000000;
     /* padding: 3%; */
     /* margin-top: 10em; */
     /* overflow-y:scroll; */
