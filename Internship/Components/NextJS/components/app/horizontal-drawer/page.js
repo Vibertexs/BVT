@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import RenderCards from '../components/RenderCards';
-import cardData from '../data/cardData';  // Import cardData
+import config from '../data/config';  // Import cardData
 import './styling.css';
 
 const MainPage = () => {
@@ -10,7 +10,8 @@ const MainPage = () => {
         <div className="cardContainer">
             <h1>The 7 Wonders of the World</h1>
    
-            <RenderCards data={cardData} />
+            <RenderCards data={config} />
+
         </div>
     );
 };

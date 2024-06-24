@@ -12,6 +12,12 @@ const VerticalCard = ({ index, image, onClick, translateX, zIndex, saturation, o
       border: `${borderThickness} solid var(--borderColor)`
     };
   } else {
+    /*
+      If there is only 2 cards, then make it so that the first one has normal styling and the second one doesnt have a left border
+      Else if there are more than 2 then do the following:
+        first one has normal
+        then everyone after that has no left border
+    */
     // If the card is not selected, set borders based on position
     if (index === 0) {
       // The right border should be half of the borderThickness that is passed in
@@ -127,7 +133,7 @@ const RenderCards = ({ data }) => {
     // Style for the child container
     const detailStyle = {
       '--childHeight': data.styling.height, // We can't just use the height in cardRenderStyle since it leads to issues in css even though they are the same
-      width: `calc(${100 - 100 / numberOfCards}% - 0.5em)`,
+      width: `calc(${100 - 100 / numberOfCards}% - ${data.styling.childGap})`, // gap between the card and the child component
       };
       
 
