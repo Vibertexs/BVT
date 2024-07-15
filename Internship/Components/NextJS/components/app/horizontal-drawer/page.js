@@ -12,6 +12,7 @@ const MainPage = () => {
    
             <RenderCards data={config} />
 
+            
         </div>
     );
 };
